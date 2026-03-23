@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local Python venv (used only to generate placeholder PDFs, optional)
+.venv/

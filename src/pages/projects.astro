@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { projects } from '../data/projects';
+---
+
+<Layout title="Projects — Your Name" description="Selected projects and links to code or demos.">
+	<div class="space-y-8">
+		<header class="space-y-2">
+			<h1 class="text-3xl font-bold tracking-tight text-slate-900">Projects</h1>
+			<p class="text-slate-600">
+				Edit <code class="rounded bg-slate-100 px-1 py-0.5 text-sm text-slate-800">src/data/projects.ts</code> to add
+				your real work.
+			</p>
+		</header>
+		<div class="grid gap-6 sm:grid-cols-1">
+			{projects.map((project) => <ProjectCard project={project} />)}
+		</div>
+	</div>
+</Layout>

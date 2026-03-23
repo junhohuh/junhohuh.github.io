@@ -1,17 +1,37 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Your Name — Home" description="Student portfolio: bio, projects, and résumé.">
+	<section class="space-y-6" aria-labelledby="hero-heading">
+		<h1 id="hero-heading" class="text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">
+			Hi — I'm Your Name.
+		</h1>
+		<p class="max-w-2xl text-lg leading-relaxed text-slate-600">
+			I'm a student who enjoys building clear, reliable software. This site introduces who I am, highlights a few
+			projects, and points recruiters to my full résumé.
+		</p>
+		<div class="flex flex-wrap gap-3 pt-2">
+			<a
+				href="/about"
+				class="rounded-lg bg-teal-800 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-teal-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-800"
+			>
+				About me
+			</a>
+			<a
+				href="/projects"
+				class="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:border-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
+			>
+				View projects
+			</a>
+			<a
+				href="/resume.pdf"
+				class="rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:border-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-400"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Résumé (PDF)
+			</a>
+		</div>
+	</section>
+</Layout>

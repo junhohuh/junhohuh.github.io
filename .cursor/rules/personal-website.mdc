@@ -1,0 +1,10 @@
+---
+description: Personal website — Astro static portfolio conventions
+globs: src/**/*.astro,src/**/*.ts,src/**/*.css,astro.config.mjs
+---
+
+- Read `docs/PROJECT_BRIEF.md` and `docs/ARCHITECTURE.md` before large changes; follow `docs/TASKS.md` for current priorities.
+- Stack: Astro 6 + TypeScript (strict) + Tailwind 4. Prefer static patterns; avoid adding a server/API for MVP scope.
+- Match existing layout and tone: professional, clear spacing, accessible landmarks and focus styles where interactive.
+- No `any`; no secrets in source. New dependencies need a short note in `docs/DECISIONS.md`.
+- Do not change MVP scope without updating `docs/PROJECT_BRIEF.md`.
