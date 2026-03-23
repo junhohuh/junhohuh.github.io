@@ -20,6 +20,12 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# AI tool config (local only)
+CLAUDE.md
+GEMINI.md
+.cursor/
+docs/1. Initial Build Plan.md
+
 # jetbrains setting folder
 .idea/
 

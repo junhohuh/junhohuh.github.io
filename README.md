@@ -5,7 +5,6 @@ Static personal site (Astro + TypeScript + Tailwind) for bio, projects, and rés
 ## Docs
 
 - [Project intake](docs/PROJECT_INTAKE.md) — original requirements
-- [Initial build plan](docs/1.%20Initial%20Build%20Plan.md) — MVP scope and shared-context conventions
 - [Project brief](docs/PROJECT_BRIEF.md) — living product summary
 - [Architecture](docs/ARCHITECTURE.md) — stack, structure, deploy
 - [Tasks](docs/TASKS.md) — current checklist
