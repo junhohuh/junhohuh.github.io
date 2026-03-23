@@ -42,8 +42,9 @@ docs/               Intake, brief, this file, tasks, decisions
 
 ## Deploy notes
 
-- **Root URL:** no `site`/`base` config yet—fine for Netlify/Vercel default domains or `username.github.io` user site.
-- **Project GitHub Pages** (`username.github.io/repo/`): set `site` and `base` in `astro.config.mjs` and redeploy; document the final URL here when chosen.
+- **Host:** GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`)
+- **Live URL:** `https://junhohuh.github.io/personal_website/`
+- **`site`:** `https://junhohuh.github.io`, **`base`:** `/personal_website` — set in `astro.config.mjs` so asset paths resolve correctly on the subpath.
 
 ## Env vars
 

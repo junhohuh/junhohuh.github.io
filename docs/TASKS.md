@@ -10,10 +10,10 @@
 
 ## Next
 
-- [ ] Replace placeholders: name, email, GitHub, LinkedIn, copy on all pages
-- [ ] Replace `public/resume.pdf` with your real résumé
+- [x] Replace placeholders: name, email, GitHub, LinkedIn, copy on all pages
+- [x] Replace `public/resume.pdf` with your real résumé
 - [ ] Fill `src/data/projects.ts` with real projects; remove placeholder card
-- [ ] Pick host (GitHub Pages / Netlify / Vercel), add deploy workflow, set `site`/`base` if needed
+- [x] Pick host (GitHub Pages / Netlify / Vercel), add deploy workflow, set `site`/`base` if needed
 - [ ] Optional: custom domain, analytics, meta/OG tags, favicon refresh
 
 ## Icebox / post-MVP

@@ -11,7 +11,7 @@ export const projects: Project[] = [
 		title: 'Personal website',
 		summary: 'Static portfolio and résumé hub built with Astro and Tailwind.',
 		tech: ['Astro', 'TypeScript', 'Tailwind CSS'],
-		repoUrl: 'https://github.com/yourusername/personal_website',
+		repoUrl: 'https://github.com/junhhohuh/personal_website',
 	},
 	{
 		title: 'Project two (placeholder)',
