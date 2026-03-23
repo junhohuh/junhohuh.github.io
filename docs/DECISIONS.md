@@ -12,6 +12,6 @@ Short log of choices worth remembering. Newest first.
 
 ## 2026-03-22 — GitHub Pages for hosting
 
-**Decision:** Deploy static `dist/` to **GitHub Pages** via GitHub Actions. Set `site` and `base` in `astro.config.mjs` for the project subpath URL (`junhohuh.github.io/personal_website/`).
+**Decision:** Deploy static `dist/` to **GitHub Pages** via GitHub Actions. Repo renamed to `junhohuh.github.io` (user site) so the live URL is `https://junhohuh.github.io/` with no subpath — only `site` is set in `astro.config.mjs`, no `base` needed.
 
-**Why:** Repo is already on GitHub; Pages is free and zero-config for static sites. No extra service needed for MVP.
+**Why:** Repo is already on GitHub; Pages is free and zero-config for static sites. User site repo gives a clean root URL.

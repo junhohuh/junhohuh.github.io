@@ -43,8 +43,8 @@ docs/               Intake, brief, this file, tasks, decisions
 ## Deploy notes
 
 - **Host:** GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`)
-- **Live URL:** `https://junhohuh.github.io/personal_website/`
-- **`site`:** `https://junhohuh.github.io`, **`base`:** `/personal_website` — set in `astro.config.mjs` so asset paths resolve correctly on the subpath.
+- **Live URL:** `https://junhohuh.github.io/`
+- **`site`:** `https://junhohuh.github.io` — no `base` needed since the repo is the user site (`junhohuh.github.io`).
 
 ## Env vars
 
