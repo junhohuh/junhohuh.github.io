@@ -10,6 +10,12 @@ Short log of choices worth remembering. Newest first.
 
 **Alternatives considered:** Next.js on Vercel (more server/SSR surface than needed for MVP).
 
+## 2026-03-22 — Umami for analytics
+
+**Decision:** Add **Umami Cloud** (free tier) analytics via a single script tag in `Layout.astro`.
+
+**Why:** Privacy-respecting (no cookies, no consent banner needed), free tier sufficient for a portfolio, zero dependencies.
+
 ## 2026-03-22 — GitHub Pages for hosting
 
 **Decision:** Deploy static `dist/` to **GitHub Pages** via GitHub Actions. Repo renamed to `junhohuh.github.io` (user site) so the live URL is `https://junhohuh.github.io/` with no subpath — only `site` is set in `astro.config.mjs`, no `base` needed.
