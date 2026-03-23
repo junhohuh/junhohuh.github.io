@@ -1,31 +1,14 @@
 ---
-const pathname = Astro.url.pathname;
-
-const nav = [
-	{ href: '/', label: 'Home', match: (p: string) => p === '/' },
-	{ href: '/about', label: 'About', match: (p: string) => p === '/about' },
-	{ href: '/projects', label: 'Projects', match: (p: string) => p === '/projects' },
-] as const;
 ---
 
-<header class="border-b border-slate-200/80 bg-white/90 backdrop-blur-sm">
-	<div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-4 px-4 py-4">
-		<a href="/" class="text-lg font-semibold tracking-tight text-slate-900">Junho Huh</a>
+<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-sm">
+	<div class="flex flex-wrap items-center justify-between gap-4 px-8 py-4">
+		<a href="#home" class="text-lg font-semibold tracking-tight text-slate-900">Junho Huh</a>
 		<nav class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm font-medium" aria-label="Primary">
-			{
-				nav.map(({ href, label, match }) => (
-					<a
-						href={href}
-						class:list={[
-							'transition-colors',
-							match(pathname) ? 'text-teal-800' : 'text-slate-600 hover:text-slate-900',
-						]}
-						aria-current={match(pathname) ? 'page' : undefined}
-					>
-						{label}
-					</a>
-				))
-			}
+			<a href="#home" class="nav-link text-slate-600 transition-colors hover:text-slate-900" data-section="home">Home</a>
+			<a href="#about" class="nav-link text-slate-600 transition-colors hover:text-slate-900" data-section="about">About</a>
+			<a href="#experience" class="nav-link text-slate-600 transition-colors hover:text-slate-900" data-section="experience">Experience</a>
+			<a href="#projects" class="nav-link text-slate-600 transition-colors hover:text-slate-900" data-section="projects">Projects</a>
 			<a
 				href="/resume.pdf"
 				class="text-slate-600 transition-colors hover:text-slate-900"
@@ -37,3 +20,26 @@ const nav = [
 		</nav>
 	</div>
 </header>
+
+<script>
+	const links = document.querySelectorAll<HTMLAnchorElement>('.nav-link');
+	const sections = document.querySelectorAll<HTMLElement>('section[id]');
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					links.forEach((link) => {
+						const active = link.dataset.section === entry.target.id;
+						link.classList.toggle('text-teal-800', active);
+						link.classList.toggle('font-semibold', active);
+						link.classList.toggle('text-slate-600', !active);
+					});
+				}
+			});
+		},
+		{ rootMargin: '-40% 0px -55% 0px' }
+	);
+
+	sections.forEach((section) => observer.observe(section));
+</script>

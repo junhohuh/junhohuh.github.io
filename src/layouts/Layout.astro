@@ -27,6 +27,9 @@ const { title, description = 'Personal website and portfolio.' } = Astro.props;
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -40,7 +43,7 @@ const { title, description = 'Personal website and portfolio.' } = Astro.props;
 			Skip to content
 		</a>
 		<Header />
-		<main id="main" class="mx-auto w-full max-w-3xl flex-1 px-4 py-10">
+		<main id="main" class="w-full flex-1">
 			<slot />
 		</main>
 		<Footer />
