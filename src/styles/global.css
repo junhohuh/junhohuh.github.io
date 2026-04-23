@@ -48,7 +48,12 @@
 
 	/* Link transitions and underline animation */
 	a {
-		@apply transition-colors duration-150 relative;
+		@apply transition-colors duration-150 relative outline-none;
+	}
+
+	/* Focus state for keyboard navigation */
+	a:focus-visible {
+		@apply ring-2 ring-teal-800 ring-offset-2 rounded;
 	}
 
 	/* Animated underline for nav and text links (not CTA buttons) */
@@ -71,24 +76,39 @@
 
 	/* Button delight - hover lift and glow */
 	button, a[href="/resume.pdf"] {
-		@apply transition-all duration-200;
+		@apply transition-all duration-200 outline-none;
+	}
+
+	button:focus-visible {
+		@apply ring-2 ring-teal-800 ring-offset-2 rounded;
 	}
 
 	a[href="/resume.pdf"]:hover {
 		text-decoration-color: currentColor;
 	}
 
-	/* CTA button primary action delight */
+	a[href="/resume.pdf"]:focus-visible {
+		@apply ring-2 ring-teal-800 ring-offset-2 rounded;
+	}
+
+	/* CTA button primary action - bold and prominent */
 	.bg-teal-800 {
-		@apply relative transition-all duration-200;
+		@apply relative transition-all duration-200 font-semibold outline-none;
+		box-shadow: 0 4px 20px rgba(13, 148, 136, 0.3);
 	}
 
 	.bg-teal-800:hover {
-		@apply shadow-lg shadow-teal-900/25;
+		@apply shadow-2xl bg-teal-700;
+		box-shadow: 0 12px 32px rgba(13, 148, 136, 0.4);
 	}
 
 	.bg-teal-800:active {
-		@apply scale-95 shadow-md;
+		@apply scale-95;
+		box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+	}
+
+	.bg-teal-800:focus-visible {
+		@apply ring-2 ring-teal-800 ring-offset-2;
 	}
 
 	/* Secondary button delight */
@@ -116,13 +136,29 @@
 		width: 48px;
 	}
 
-	/* Animated tech tags */
+	/* Card elevation - bold depth */
+	article {
+		box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+		border-color: rgba(148, 163, 184, 0.5);
+	}
+
+	article:hover {
+		box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+		border-color: rgba(13, 148, 136, 0.2);
+	}
+
+	/* Animated tech tags - bolder appearance */
 	li.rounded-full {
-		@apply transition-all duration-200;
+		@apply transition-all duration-200 font-medium bg-gradient-to-r from-slate-100 to-slate-50;
 	}
 
 	article:hover li.rounded-full {
-		@apply scale-110 bg-teal-100 text-teal-800;
+		@apply scale-110 bg-teal-100 text-teal-700 font-semibold;
+	}
+
+	/* Section heading boldness */
+	section[id] h2 {
+		@apply font-bold tracking-tight;
 	}
 
 	/* Reduce motion support */
