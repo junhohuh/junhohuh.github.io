@@ -6,14 +6,31 @@
 			<a href="#about" class="nav-link text-slate-600 transition-colors hover:text-slate-900" data-section="about">About</a>
 			<a href="#experience" class="nav-link text-slate-600 transition-colors hover:text-slate-900" data-section="experience">Experience</a>
 			<a href="#projects" class="nav-link text-slate-600 transition-colors hover:text-slate-900" data-section="projects">Projects</a>
-			<a
-				href="/resume.pdf"
-				class="text-slate-600 transition-colors hover:text-slate-900"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Resume
-			</a>
+			<div class="relative group">
+				<button
+					class="text-slate-600 transition-colors hover:text-slate-900"
+					aria-label="Resume options"
+					aria-expanded="false"
+				>
+					Resume
+				</button>
+				<div class="absolute top-full right-0 mt-2 w-48 bg-white border border-slate-200/50 rounded-lg shadow-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+					<a
+						href="/resume-ds.pdf"
+						class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 first:rounded-t-lg transition-colors duration-150"
+						download
+					>
+						Data Science Resume
+					</a>
+					<a
+						href="/resume-pm.pdf"
+						class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 last:rounded-b-lg transition-colors duration-150"
+						download
+					>
+						Product Manager Resume
+					</a>
+				</div>
+			</div>
 		</nav>
 	</div>
 </header>

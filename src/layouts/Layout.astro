@@ -34,6 +34,46 @@ const { title, description = 'Personal website and portfolio.' } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	<script defer src="https://cloud.umami.is/script.js" data-website-id="06f85134-05b3-4d4b-8737-0e4601a49e7a"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			// Apply staggered animation delays to cards
+			const cards = document.querySelectorAll('article');
+			cards.forEach((card, index) => {
+				const delayClass = `animate-delay-${Math.min(index * 100, 500)}`;
+				card.classList.add(delayClass);
+			});
+
+			// Logo click to go home
+			const logo = document.querySelector('header a[href="#home"]');
+			if (logo) {
+				logo.addEventListener('click', (e) => {
+					e.preventDefault();
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				});
+			}
+
+			// Hide scroll hint when user scrolls
+			const scrollHint = document.querySelector('section#home .animate-bounce');
+			let hasScrolled = false;
+			window.addEventListener('scroll', () => {
+				if (!hasScrolled && window.scrollY > 100) {
+					if (scrollHint) {
+						scrollHint.style.opacity = '0';
+						scrollHint.style.pointerEvents = 'none';
+						scrollHint.style.transition = 'opacity 0.3s ease-out';
+					}
+					hasScrolled = true;
+				}
+			});
+
+		});
+
+		// Console message for developers
+		console.log('%c👋 Welcome to Junho\'s portfolio!', 'font-size: 16px; font-weight: bold; color: #0d9488;');
+		console.log('%cInterested in building great software together? Check out the source code or reach out!', 'font-size: 12px; color: #64748b;');
+		console.log('%cGitHub: https://github.com/junhohuh | Email: junhohuh1234@gmail.com', 'font-size: 11px; color: #94a3b8;');
+	</script>
+
 	</head>
 	<body class="flex min-h-screen flex-col bg-slate-50 text-slate-800 antialiased">
 		<a

@@ -11,3 +11,126 @@
 		font-family: "Instrument Serif", Georgia, serif;
 	}
 }
+
+@layer utilities {
+	/* Animations */
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(16px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.animate-fadeInUp {
+		animation: fadeInUp 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+	}
+
+	/* Staggered animation delays for cards */
+	.animate-delay-100 {
+		animation-delay: 100ms;
+	}
+	.animate-delay-200 {
+		animation-delay: 200ms;
+	}
+	.animate-delay-300 {
+		animation-delay: 300ms;
+	}
+	.animate-delay-400 {
+		animation-delay: 400ms;
+	}
+	.animate-delay-500 {
+		animation-delay: 500ms;
+	}
+
+	/* Link transitions and underline animation */
+	a {
+		@apply transition-colors duration-150 relative;
+	}
+
+	/* Animated underline for nav and text links (not CTA buttons) */
+	.nav-link::after,
+	a[href^="#"]:not(.nav-link):not([class*="bg-"]):not([class*="border"])::after {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 0;
+		height: 1.5px;
+		background-color: currentColor;
+		transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+
+	.nav-link:hover::after,
+	a[href^="#"]:not(.nav-link):not([class*="bg-"]):not([class*="border"]):hover::after {
+		width: 100%;
+	}
+
+	/* Button delight - hover lift and glow */
+	button, a[href="/resume.pdf"] {
+		@apply transition-all duration-200;
+	}
+
+	a[href="/resume.pdf"]:hover {
+		text-decoration-color: currentColor;
+	}
+
+	/* CTA button primary action delight */
+	.bg-teal-800 {
+		@apply relative transition-all duration-200;
+	}
+
+	.bg-teal-800:hover {
+		@apply shadow-lg shadow-teal-900/25;
+	}
+
+	.bg-teal-800:active {
+		@apply scale-95 shadow-md;
+	}
+
+	/* Secondary button delight */
+	.border-slate-300:hover {
+		@apply border-teal-800 bg-teal-50/50;
+	}
+
+	/* Section header delight */
+	h2 {
+		@apply relative;
+	}
+
+	section[id] h2::after {
+		content: '';
+		position: absolute;
+		bottom: -8px;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background: linear-gradient(to right, #0d9488, #06b6d4);
+		transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+	}
+
+	section[id]:target h2::after {
+		width: 48px;
+	}
+
+	/* Animated tech tags */
+	li.rounded-full {
+		@apply transition-all duration-200;
+	}
+
+	article:hover li.rounded-full {
+		@apply scale-110 bg-teal-100 text-teal-800;
+	}
+
+	/* Reduce motion support */
+	@media (prefers-reduced-motion: reduce) {
+		* {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+}
